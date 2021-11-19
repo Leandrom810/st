@@ -93,7 +93,9 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-float alpha = 0.85; /* transparency */
+/* transparency*/
+float alpha = 0.85;
+float alphaUnfocused = 0.80;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -120,7 +122,7 @@ static const char *colorname[] = {
 
 
 	/* special colors */
-	[256] = "#03030f", /* background */
+	[256] = "#01010d", /* background */
 	[257] = "#bbbbbb", /* foreground */
 };
 
@@ -133,6 +135,7 @@ unsigned int defaultbg = 256;
 static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 256;
 
+unsigned int bg = 256, bgUnfocused = 256;
 /*
  *  * Colors used, when the specific fg == defaultfg. So in reverse mode this
  *  * will reverse too. Another logic would only make the simple feature too
